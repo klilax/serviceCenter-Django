@@ -27,9 +27,7 @@ urlpatterns = [
     path('get_ticket/inflate_tires', inflate_tires),
     path('get_ticket/diagnostic', diagnostic),
     path('processing/', ProcessNext.as_view()),
-    # path('/processing', ProcessNext.as_view()),
     path('processing', ProcessNext.as_view(), name='processing'),
     path('next/', GetNext.as_view()),
-    # re_path("/processing/?", RedirectView.as_view(url='/processing')),
-    # path('/processing/', RedirectView.as_view(url='/processing')),
+    path('', RedirectView.as_view(url='welcome/')),
 ]
